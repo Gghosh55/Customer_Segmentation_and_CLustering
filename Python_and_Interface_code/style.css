@@ -1,0 +1,120 @@
+/* ✅ Fixing background path */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: url("/static/images/background.png");
+    background-size: cover;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ✅ Fixing logo path */
+.logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+/* ✅ 3D Marquee Styling */
+.marquee-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    perspective: 500px; /* 3D Effect */
+}
+
+.marquee-box {
+    width: 400px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 2em;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+/* ✅ Deep Blue */
+.marquee-box:first-child {
+    background-color: #00008b;
+    color: white;
+    transform-origin: right;
+    transform: perspective(200px) rotateY(-15deg);
+}
+
+/* ✅ Light Blue */
+.marquee-box:last-child {
+    background-color: #87ceeb;
+    color: darkblue;
+    transform-origin: left;
+    transform: perspective(200px) rotateY(15deg);
+}
+
+.marquee-box span {
+    position: absolute;
+    animation: marquee 5s linear infinite;
+    left: 100%;
+}
+
+.marquee-box:first-child span {
+    animation-delay: 2.5s;
+}
+
+@keyframes marquee {
+    from {
+        left: 100%;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+/* ✅ File Upload Styling */
+.file-upload {
+    margin-top: 20px;
+    animation: slideIn 1s ease-in-out;
+}
+
+.file-box {
+    width: 300px;
+    height: 100px;
+    margin-top: 15px;
+    background-color: #e6f0ff;
+    border: 2px dashed #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.predict-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: linear-gradient(to right, #1E90FF, #003366); /* Bright Blue to Dark Blue */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    border-radius: 5px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.predict-button:hover {
+    background: linear-gradient(to right, #003366, #1E90FF); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
